@@ -27,8 +27,9 @@ _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 #cv2.imwrite("processed.jpg", thresh)
 
 # Perform OCR with custom config
-custom_config = r'--oem 3 --psm 6 -l eng'
-text = pytesseract.image_to_string(Image.fromarray(thresh), config=custom_config)
+#custom_config = r'--oem 3 --psm 6 -l eng'
+text = pytesseract.image_to_string(Image.fromarray(thresh))
+#text = pytesseract.image_to_string(Image.fromarray(thresh), config=custom_config)
 
 
 print("Extracted Text:")
